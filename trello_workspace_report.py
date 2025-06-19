@@ -3,16 +3,14 @@ import csv
 from datetime import datetime
 import argparse
 
-# Trello API configuration
 BASE_URL = "https://api.trello.com/1"
 HEADERS = {"Accept": "application/json"}
 
 def get_workspace_boards(api_key, api_token, workspace_url):
     """Get all boards in a Trello workspace"""
-    # Extract workspace ID from URL
     workspace_name = workspace_url.split('/w/')[-1].split('/')[0]
     
-    # First get the organization ID
+    # Workspace ID
     org_url = f"{BASE_URL}/organizations/{workspace_name}"
     query = {'key': api_key, 'token': api_token}
     
@@ -22,7 +20,7 @@ def get_workspace_boards(api_key, api_token, workspace_url):
     
     org_id = response.json()['id']
     
-    # Now get all boards in the organization
+    # Board Scrap
     boards_url = f"{BASE_URL}/organizations/{org_id}/boards"
     query = {
         'key': api_key,
