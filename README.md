@@ -32,3 +32,16 @@ A Python script that exports all boards, members, roles, and activity data from 
 git clone https://github.com/yourusername/trello-workspace-exporter.git
 cd trello-workspace-exporter
 pip install requests
+```
+
+### 3. Usage
+```python trello_workspace_report.py --key YOUR_API_KEY --token YOUR_API_TOKEN --workspace "https://trello.com/w/yourworkspace" --output report.csv```
+
+#### Command Line Arguments
+| Argument       | Required | Default Value       | Description                                                                 |
+|----------------|----------|---------------------|-----------------------------------------------------------------------------|
+| `--key`        | Yes      | -                   | Trello API key (get from [Trello App Key](https://trello.com/app-key))      |
+| `--token`      | Yes      | -                   | Trello API token (generate with your key)                                   |
+| `--workspace`  | Yes      | -                   | URL of the Trello workspace (e.g., `https://trello.com/w/yourworkspace`)    |
+| `--output`     | No       | `trello_report.csv` | Custom filename for the output CSV                                          |
+| `--help`       | No       | -                   | Show help message and exit                                                  |
